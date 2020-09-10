@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Noms Ciutats</title>
+
+  <!-- BOOTSTRAP CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <!-- NAVEGACION -->
+  <nav class="navbar bg-light">
+    <a href="/" class="navbar-brand">
+      Noms Ciutats App
+    </a>
+  </nav>
+
+  <div class="container-fluid">
+
+    <div id="fase1" class="row justify-content-center align-items-center mt-4">
+      
+      <div class="col-sm-3 d-sm-block d-none mt-4">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <div class="item active">
+              <img src="img/barcelona.jpg" alt="Barcelona" style="width:600px;height:300px;">
+            </div>
+
+            <div class="item">
+              <img src="img/madrid.jpg" alt="Mdrid" style="width:600px;height:300px;">
+            </div>
+
+            <div class="item">
+              <img src="img/cadiz.jpg" alt="Cadiz" style="width:600px;height:300px;">
+            </div>
+
+            <div class="item">
+              <img src="img/valencia.jpg" alt="Valencia" style="width:600px;height:300px;">
+            </div>
+
+            <div class="item">
+              <img src="img/santander.jpg" alt="Santander" style="width:600px;height:300px;">
+            </div>
+
+            <div class="item">
+              <img src="img/malaga.jpg" alt="Malaga" style="width:600px;height:300px;">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-sm-5 d-sm-block d-none">
+        <h4 id="etiqueta-fase" class="text-danger">Fase 1</h4>
+        <div class="card">
+          <div class="card-body">
+            <form id="nombre-ciudad-form" action="#">
+              <div class="form-group">
+                <h2 class="h4 text-center text-success text-capitalize">Nombres de ciudades</h2>
+                <div class="form-group">
+                  <input type="text" id="barcelona" class="form-control" placeholder="Introduce Barcelona">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="madrid" class="form-control" placeholder="Introduce Madrid">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="valencia" class="form-control" placeholder="Introduce Valencia">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="malaga" class="form-control" placeholder="Introduce Malaga">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="cadiz" class="form-control" placeholder="Introduce Cadiz">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="santander" class="form-control" placeholder="Introduce Santander">
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-outline-success btn-block text-info btn-primary">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="ciudad" class="col-sm-4 d-sm-block d-none text-center mt-4"></div>
+
+    </div>
+  </div>
+</body>
+
+<script>
+  $(function () {
+    $('.carousel').carousel({
+      interval: 1000
+    });
+    $('.carousel-control.right').trigger('click');
+  });
+</script>
+
+<script src="Fase1.js"></script>
+<script src="Fase2.js"></script>
+<script src="Fase3.js"></script>
+<script src="Fase4.js"></script>
+
+</html>
