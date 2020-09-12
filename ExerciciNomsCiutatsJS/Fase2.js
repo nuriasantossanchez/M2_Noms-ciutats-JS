@@ -22,10 +22,10 @@ function getArraySort(array) {
 
 //UI
 function UIShowArray(array, caption) {
-  const contenido = document.querySelector('.card-body');
+  const contenido = document.querySelector('#content');
   var div = document.createElement('div');
   div.innerHTML = `
-    <h4 id="etiqueta-fase" class="text-danger">${caption}</h4>
+    <h4 class="text-danger">${caption}</h4>
     `;
   contenido.appendChild(div);
 
@@ -45,14 +45,14 @@ function UIShowArray(array, caption) {
 //EVENTOS DEL DOM
 document.getElementById('nombre-ciudad-form')
   .addEventListener('submit', function (e) {
-    
+
     if (Ciudad.barcelona === '' || Ciudad.madrid === ''
-      || Ciudad.valencia === '' || Ciudad.malaga === ''
-      || Ciudad.cadiz === '' || Ciudad.santander === '') {
-      e.preventDefault();
+    || Ciudad.valencia === '' || Ciudad.malaga === ''
+    || Ciudad.cadiz === '' || Ciudad.santander === '') {
       return;
-    } 
-    if (document.getElementById('ciudad').childElementCount === Ciudad.cont) {
+    }
+
+    if (isFormDisabled()) {
       let arrayCiudadesSort = getArraySort(Ciudad.arrayCiudades);
       UIShowArray(arrayCiudadesSort, 'Fase 2');
 

@@ -85,22 +85,18 @@ document.getElementById('nombre-ciudad-form')
     .addEventListener('submit', function (e) {
 
         if (Ciudad.barcelona === '' || Ciudad.madrid === ''
-            || Ciudad.valencia === '' || Ciudad.malaga === ''
-            || Ciudad.cadiz === '' || Ciudad.santander === '') {
-            e.preventDefault();
-            return;
-        } 
-        if (document.getElementById('ciudad').childElementCount === Ciudad.cont) {
+        || Ciudad.valencia === '' || Ciudad.malaga === ''
+        || Ciudad.cadiz === '' || Ciudad.santander === '') {
+          return;
+        }
 
+        if (isFormDisabled()) {
             UIShowArray(Ciudad.arrayBarcelona.reverse(), 'Fase 4');
             UIShowArray(Ciudad.arrayMadrid.reverse(), '');
             UIShowArray(Ciudad.arrayValencia.reverse(), '');
             UIShowArray(Ciudad.arrayMalaga.reverse(), '');
             UIShowArray(Ciudad.arrayCadiz.reverse(), '');
             UIShowArray(Ciudad.arraySantander.reverse(), '');
-
-            document.getElementById('etiqueta-fase').remove();
-            document.getElementById('nombre-ciudad-form').remove();
 
             e.preventDefault();
         }

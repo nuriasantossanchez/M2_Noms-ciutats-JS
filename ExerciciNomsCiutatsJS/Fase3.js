@@ -19,13 +19,12 @@ document.getElementById('nombre-ciudad-form')
     .addEventListener('submit', function (e) {
 
         if (Ciudad.barcelona === '' || Ciudad.madrid === ''
-            || Ciudad.valencia === '' || Ciudad.malaga === ''
-            || Ciudad.cadiz === '' || Ciudad.santander === '') {
-            e.preventDefault();
-            return;
-        } 
-        
-        if (document.getElementById('ciudad').childElementCount === Ciudad.cont) {
+        || Ciudad.valencia === '' || Ciudad.malaga === ''
+        || Ciudad.cadiz === '' || Ciudad.santander === '') {
+          return;
+        }
+
+        if (isFormDisabled()) {
             let arrayCiudadesModificadas = getArrayModificado(Ciudad.arrayCiudades)
             arrayCiudadesModificadas = getArraySort(arrayCiudadesModificadas);
             UIShowArray(arrayCiudadesModificadas, 'Fase 3');
