@@ -45,149 +45,149 @@ function UIShowMessage(message, cssClass) {
 }
 
 
-function UIShowNombreCiudad(nombreCiudad) {
-    const ciudad = document.getElementById('ciudad');
+function UIShowNombreCiudad(ciudadObject) {
+    const divCiudad = document.getElementById('nombre-ciudad');
     const inputFormBcn = document.getElementById('barcelona');
 
     if (!inputFormBcn.disabled) {
-        addBarcelona(nombreCiudad, ciudad, inputFormBcn);
+        addBarcelona(ciudadObject, divCiudad, inputFormBcn);
     }
 
     const inputFormMdr = document.getElementById('madrid');
     if (!inputFormMdr.disabled) {
-        addMadrid(nombreCiudad, ciudad, inputFormMdr);
+        addMadrid(ciudadObject, divCiudad, inputFormMdr);
     }
 
     const inputFormVal = document.getElementById('valencia');
     if (!inputFormVal.disabled) {
-        addValencia(nombreCiudad, ciudad, inputFormVal);
+        addValencia(ciudadObject, divCiudad, inputFormVal);
     }
 
     const inputFormMlg = document.getElementById('malaga');
     if (!inputFormMlg.disabled) {
-        addMalaga(nombreCiudad, ciudad, inputFormMlg);
+        addMalaga(ciudadObject, divCiudad, inputFormMlg);
     }
 
     const inputFormCdz = document.getElementById('cadiz');
     if (!inputFormCdz.disabled) {
-        addCadiz(nombreCiudad, ciudad, inputFormCdz);
+        addCadiz(ciudadObject, divCiudad, inputFormCdz);
     }
 
     const inputFormStd = document.getElementById('santander');
     if (!inputFormStd.disabled) {
-        addSantander(nombreCiudad, ciudad, inputFormStd);
+        addSantander(ciudadObject, divCiudad, inputFormStd);
     }
 }
 
-function addBarcelona(nombreCiudad, divCiudad, inputForm) {
-    if (nombreCiudad.barcelona.toUpperCase() === new String('Barcelona').toUpperCase()) {
+function addBarcelona(ciudadObject, divCiudad, inputForm) {
+    if (ciudadObject.barcelona.toUpperCase() === new String('Barcelona').toUpperCase()) {
         var divCiudadBcn = document.createElement('div');
         divCiudadBcn.className = 'alert alert-success text-center';
         divCiudadBcn.innerHTML = `
                 <div class='card-header mt-2'> 
-                        <strong>${nombreCiudad.barcelona}</strong>
+                        <strong>${ciudadObject.barcelona}</strong>
                 </div>           
             `;
         divCiudad.appendChild(divCiudadBcn);
         inputForm.disabled = true;
     }
     else {
-        UIShowMessage('El nombre de ciudad introducido \'' + nombreCiudad.barcelona
+        UIShowMessage('El nombre de ciudad introducido \'' + ciudadObject.barcelona
             + '\' no es correcto', 'danger');
         inputForm.value = '';
     }
 }
 
-function addMadrid(nombreCiudad, divCiudad, inputForm) {
-    if (nombreCiudad.madrid.toUpperCase() === new String('Madrid').toUpperCase()) {
+function addMadrid(ciudadObject, divCiudad, inputForm) {
+    if (ciudadObject.madrid.toUpperCase() === new String('Madrid').toUpperCase()) {
         var divCiudadMdrd = document.createElement('div');
         divCiudadMdrd.className = 'alert alert-success text-center';
         divCiudadMdrd.innerHTML = `
                 <div class='card-header mt-2'> 
-                        <strong>${nombreCiudad.madrid}</strong>
+                        <strong>${ciudadObject.madrid}</strong>
                 </div>           
             `;
         divCiudad.appendChild(divCiudadMdrd);
         inputForm.disabled = true;
     }
     else {
-        UIShowMessage('El nombre de ciudad introducido \'' + nombreCiudad.madrid
+        UIShowMessage('El nombre de ciudad introducido \'' + ciudadObject.madrid
             + '\' no es correcto', 'danger');
         inputForm.value = '';
     }
 }
 
-function addValencia(nombreCiudad, divCiudad, inputForm) {
-    if (nombreCiudad.valencia.toUpperCase() === new String('Valencia').toUpperCase()) {
+function addValencia(ciudadObject, divCiudad, inputForm) {
+    if (ciudadObject.valencia.toUpperCase() === new String('Valencia').toUpperCase()) {
         var divCiudadVlnc = document.createElement('div');
         divCiudadVlnc.className = 'alert alert-success text-center';
         divCiudadVlnc.innerHTML = `
                 <div class='card-header mt-2'> 
-                        <strong>${nombreCiudad.valencia}</strong>
+                        <strong>${ciudadObject.valencia}</strong>
                 </div>           
             `;
         divCiudad.appendChild(divCiudadVlnc);
         inputForm.disabled = true;
     }
     else {
-        UIShowMessage('El nombre de ciudad introducido \'' + nombreCiudad.valencia
+        UIShowMessage('El nombre de ciudad introducido \'' + ciudadObject.valencia
             + '\' no es correcto', 'danger');
         inputForm.value = '';
     }
 }
 
-function addMalaga(nombreCiudad, divCiudad, inputForm) {
-    if (nombreCiudad.malaga.toUpperCase() === new String('Malaga').toUpperCase()) {
+function addMalaga(ciudadObject, divCiudad, inputForm) {
+    if (ciudadObject.malaga.toUpperCase() === new String('Malaga').toUpperCase()) {
         var divCiudadMlg = document.createElement('div');
         divCiudadMlg.className = 'alert alert-success text-center';
         divCiudadMlg.innerHTML = `
                 <div class='card-header mt-2'> 
-                        <strong>${nombreCiudad.malaga}</strong>
+                        <strong>${ciudadObject.malaga}</strong>
                 </div>           
             `;
         divCiudad.appendChild(divCiudadMlg);
         inputForm.disabled = true;
     }
     else {
-        UIShowMessage('El nombre de ciudad introducido \'' + nombreCiudad.malaga
+        UIShowMessage('El nombre de ciudad introducido \'' + ciudadObject.malaga
             + '\' no es correcto', 'danger');
         inputForm.value = '';
     }
 }
 
-function addCadiz(nombreCiudad, divCiudad, inputForm) {
-    if (nombreCiudad.cadiz.toUpperCase() === new String('Cadiz').toUpperCase()) {
+function addCadiz(ciudadObject, divCiudad, inputForm) {
+    if (ciudadObject.cadiz.toUpperCase() === new String('Cadiz').toUpperCase()) {
         var divCiudadCdz = document.createElement('div');
         divCiudadCdz.className = 'alert alert-success text-center';
         divCiudadCdz.innerHTML = `
                 <div class='card-header mt-2'> 
-                        <strong>${nombreCiudad.cadiz}</strong>
+                        <strong>${ciudadObject.cadiz}</strong>
                 </div>           
             `;
         divCiudad.appendChild(divCiudadCdz);
         inputForm.disabled = true;
     }
     else {
-        UIShowMessage('El nombre de ciudad introducido \'' + nombreCiudad.cadiz
+        UIShowMessage('El nombre de ciudad introducido \'' + ciudadObject.cadiz
             + '\' no es correcto', 'danger');
         inputForm.value = '';
     }
 }
 
-function addSantander(nombreCiudad, divCiudad, inputForm) {
-    if (nombreCiudad.santander.toUpperCase() === new String('Santander').toUpperCase()) {
+function addSantander(ciudadObject, divCiudad, inputForm) {
+    if (ciudadObject.santander.toUpperCase() === new String('Santander').toUpperCase()) {
         var divCiudadStdr = document.createElement('div');
         divCiudadStdr.className = 'alert alert-success text-center';
         divCiudadStdr.innerHTML = `
                 <div class='card-header mt-2'> 
-                        <strong>${nombreCiudad.santander}</strong>
+                        <strong>${ciudadObject.santander}</strong>
                 </div>           
             `;
         divCiudad.appendChild(divCiudadStdr);
         inputForm.disabled = true;
     }
     else {
-        UIShowMessage('El nombre de ciudad introducido \'' + nombreCiudad.santander
+        UIShowMessage('El nombre de ciudad introducido \'' + ciudadObject.santander
             + '\' no es correcto', 'danger');
         inputForm.value = '';
     }
@@ -195,7 +195,7 @@ function addSantander(nombreCiudad, divCiudad, inputForm) {
 
 function resetAll() {
     if (confirm('Esta seguro que quiere borrar todo?')) {
-        let ciudad = document.getElementById('ciudad');
+        let ciudad = document.getElementById('nombre-ciudad');
         while (ciudad.firstChild) {
             ciudad.removeChild(ciudad.firstChild);
         }
@@ -254,6 +254,7 @@ document.getElementById('nombre-ciudad-form')
             || Ciudad.valencia === '' || Ciudad.malaga === ''
             || Ciudad.cadiz === '' || Ciudad.santander === '') {
             UIShowMessage('Complete todos los campos, por favor', 'danger');
+            e.preventDefault();
             return;
         }
 
