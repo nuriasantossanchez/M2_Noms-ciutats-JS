@@ -2,12 +2,16 @@ Object.defineProperty(Ciudad, 'arrayCiudades', {
   get: function () {
     var arrayCiudades = new Array();
     for (var [key, value] of Object.entries(Ciudad)) {
-      if (isNaN(value)) {
-        arrayCiudades.push(value);
-      }
+      arrayCiudades.push(value);
     }
     return arrayCiudades;
-  },
+  }
+});
+
+Object.defineProperty(Ciudad, 'arraySort', {
+  get: function (array) {
+    return Ciudad.arraySort = getArraySort;
+  }
 });
 
 function getArraySort(array) {
@@ -15,7 +19,6 @@ function getArraySort(array) {
   array.forEach(function (element) {
     let elementCapitalize = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
     arraySort.push(elementCapitalize);
-
   });
   return arraySort.sort();
 }
@@ -41,20 +44,19 @@ function UIShowArray(array, caption) {
   });
 }
 
-
 //EVENTOS DEL DOM
 document.getElementById('nombre-ciudad-form')
   .addEventListener('submit', function (e) {
 
     if (Ciudad.barcelona === '' || Ciudad.madrid === ''
-    || Ciudad.valencia === '' || Ciudad.malaga === ''
-    || Ciudad.cadiz === '' || Ciudad.santander === '') {
+      || Ciudad.valencia === '' || Ciudad.malaga === ''
+      || Ciudad.cadiz === '' || Ciudad.santander === '') {
+      e.preventDefault();
       return;
     }
 
     if (isFormDisabled()) {
-      let arrayCiudadesSort = getArraySort(Ciudad.arrayCiudades);
-      UIShowArray(arrayCiudadesSort, 'Fase 2');
+      UIShowArray(Ciudad.arraySort(Ciudad.arrayCiudades), 'Fase 2');
 
       e.preventDefault();
     }

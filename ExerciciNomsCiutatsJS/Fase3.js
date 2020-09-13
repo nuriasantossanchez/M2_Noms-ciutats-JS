@@ -1,3 +1,9 @@
+Object.defineProperty(Ciudad, 'arrayModificado', {
+    get: function (array) {
+        return Ciudad.arrayModificado = getArrayModificado;
+    }
+});
+
 function getArrayModificado(array) {
     let arrayCiudadesModificadas = new Array();
     let vocal_a = 'a';
@@ -19,15 +25,14 @@ document.getElementById('nombre-ciudad-form')
     .addEventListener('submit', function (e) {
 
         if (Ciudad.barcelona === '' || Ciudad.madrid === ''
-        || Ciudad.valencia === '' || Ciudad.malaga === ''
-        || Ciudad.cadiz === '' || Ciudad.santander === '') {
-          return;
+            || Ciudad.valencia === '' || Ciudad.malaga === ''
+            || Ciudad.cadiz === '' || Ciudad.santander === '') {
+            e.preventDefault();
+            return;
         }
 
         if (isFormDisabled()) {
-            let arrayCiudadesModificadas = getArrayModificado(Ciudad.arrayCiudades)
-            arrayCiudadesModificadas = getArraySort(arrayCiudadesModificadas);
-            UIShowArray(arrayCiudadesModificadas, 'Fase 3');
+            UIShowArray(Ciudad.arrayModificado(Ciudad.arraySort(Ciudad.arrayCiudades)), 'Fase 3');
 
             e.preventDefault();
         }

@@ -3,7 +3,7 @@ Object.defineProperties(Ciudad, {
         get: function () {
             var arrayBarcelona = new Array();
             for (var [key, value] of Object.entries(Ciudad)) {
-                if (isNaN(value) && key === 'barcelona') {
+                if (key === 'barcelona') {
                     Array.prototype.forEach.call(value, function (chr) {
                         arrayBarcelona.push(chr);
                     });
@@ -16,7 +16,7 @@ Object.defineProperties(Ciudad, {
         get: function () {
             var arrayMadrid = new Array();
             for (var [key, value] of Object.entries(Ciudad)) {
-                if (isNaN(value) && key === 'madrid') {
+                if (key === 'madrid') {
                     Array.prototype.forEach.call(value, function (chr) {
                         arrayMadrid.push(chr);
                     });
@@ -29,7 +29,7 @@ Object.defineProperties(Ciudad, {
         get: function () {
             var arrayValencia = new Array();
             for (var [key, value] of Object.entries(Ciudad)) {
-                if (isNaN(value) && key === 'valencia') {
+                if (key === 'valencia') {
                     Array.prototype.forEach.call(value, function (chr) {
                         arrayValencia.push(chr);
                     });
@@ -42,7 +42,7 @@ Object.defineProperties(Ciudad, {
         get: function () {
             var arrayMalaga = new Array();
             for (var [key, value] of Object.entries(Ciudad)) {
-                if (isNaN(value) && key === 'malaga') {
+                if (key === 'malaga') {
                     Array.prototype.forEach.call(value, function (chr) {
                         arrayMalaga.push(chr);
                     });
@@ -50,12 +50,12 @@ Object.defineProperties(Ciudad, {
                 }
             }
         }
-    }, 
+    },
     'arrayCadiz': {
         get: function () {
             var arrayCadiz = new Array();
             for (var [key, value] of Object.entries(Ciudad)) {
-                if (isNaN(value) && key === 'cadiz') {
+                if (key === 'cadiz') {
                     Array.prototype.forEach.call(value, function (chr) {
                         arrayCadiz.push(chr);
                     });
@@ -68,7 +68,7 @@ Object.defineProperties(Ciudad, {
         get: function () {
             var arraySantander = new Array();
             for (var [key, value] of Object.entries(Ciudad)) {
-                if (isNaN(value) && key === 'santander') {
+                if (key === 'santander') {
                     Array.prototype.forEach.call(value, function (chr) {
                         arraySantander.push(chr);
                     });
@@ -85,9 +85,10 @@ document.getElementById('nombre-ciudad-form')
     .addEventListener('submit', function (e) {
 
         if (Ciudad.barcelona === '' || Ciudad.madrid === ''
-        || Ciudad.valencia === '' || Ciudad.malaga === ''
-        || Ciudad.cadiz === '' || Ciudad.santander === '') {
-          return;
+            || Ciudad.valencia === '' || Ciudad.malaga === ''
+            || Ciudad.cadiz === '' || Ciudad.santander === '') {
+            e.preventDefault();
+            return;
         }
 
         if (isFormDisabled()) {
